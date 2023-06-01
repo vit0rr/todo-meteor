@@ -5,6 +5,7 @@ import { TasksCollection } from "../db/TasksCollection";
 import { Task } from "./Task.jsx";
 import { TaskForm } from "./TaskForm";
 import { LoginForm } from "./LoginForm";
+import { formatName } from "./utils/formatName";
 
 const toggleChecked = ({ _id, isChecked }) => {
   Meteor.call("tasks.setIsChecked", _id, !isChecked);
@@ -57,7 +58,7 @@ export const App = () => {
       <header>
         <div className="app-bar">
           <div className="app-header">
-            <h1>To Do List {pendingTasksTitle}</h1>
+            <h1>Task list {pendingTasksTitle}</h1>
           </div>
         </div>
       </header>
@@ -65,8 +66,11 @@ export const App = () => {
       <div className="main">
         {user ? (
           <Fragment user={user}>
-            <div className="user" onClick={logout}>
-              {user.username || user.profile.name} 🚪
+            <div className="user">
+              Take your tasks,{" "}
+              <span onClick={logout}>
+                {formatName(user.username || user.profile.name)}!
+              </span>
             </div>
             <TaskForm />
             <div className="filter">
