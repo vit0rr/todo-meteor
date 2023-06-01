@@ -40,7 +40,7 @@ export const LoginForm = () => {
       </div>
 
       <div>
-        <button type="submit">Log In</button>
+        <button type="submit" className="login-btn">Log In</button>
       </div>
     </form>
   );

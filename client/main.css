@@ -1,7 +1,5 @@
 body {
   font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
   background-attachment: fixed;
 
   position: absolute;
@@ -33,10 +31,22 @@ button:focus {
 .filter {
   display: flex;
   justify-content: center;
+  margin: 16px 0;
 }
 
 .filter > button {
   background-color: #62807e;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 16px;
+  margin: 0 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter > button:hover {
+  background-color: #4a665a;
 }
 
 .app {
@@ -58,6 +68,13 @@ button:focus {
   flex-grow: 1;
   overflow: auto;
   background: white;
+  border: 1px solid #e1e5f0;
+  min-width: 600px;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 3px 3px rgba(34, 25, 25, 0.4);
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .main::-webkit-scrollbar {
@@ -67,11 +84,11 @@ button:focus {
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
-  padding: 20px 15px 15px 15px;
-  position: relative;
+  background-color: #fff;
+  color: #000;
+  padding: 16px;
   box-shadow: 0 3px 3px rgba(34, 25, 25, 0.4);
+  position: relative;
 }
 
 .app-bar {
@@ -89,6 +106,7 @@ header {
 .task-form {
   display: flex;
   margin: 16px;
+  justify-content: space-between;
 }
 
 .task-form > input {
@@ -96,35 +114,44 @@ header {
   box-sizing: border-box;
   padding: 10px 6px;
   background: transparent;
-  border: 1px solid #aaa;
+  border: 1px solid #ccc;
   width: 100%;
   font-size: 1em;
   margin-right: 16px;
+  border-radius: 4px;
 }
 
 .task-form > input:focus {
   outline: 0;
+  border-color: #315481;
 }
 
 .task-form > button {
   min-width: 100px;
-  height: 95%;
+  height: 38px;
   background-color: #315481;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-form > button:hover {
+  background-color: #253f60;
 }
 
 .tasks {
   list-style-type: none;
-  padding-inline-start: 0;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-block-start: 0;
-  margin-block-end: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .tasks > li {
   display: flex;
+  align-items: center;
   padding: 16px;
-  border-bottom: #eee solid 1px;
+  border-bottom: 1px solid #ccc;
 }
 
 .tasks > li > span {
@@ -134,6 +161,16 @@ header {
 .tasks > li > button {
   justify-self: flex-end;
   background-color: #ff3046;
+  margin-left: auto;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.tasks > li > button:hover {
+  background-color: #c82734;
 }
 
 .login-form {
@@ -175,11 +212,14 @@ header {
 
 .user {
   display: flex;
-
-  align-self: flex-end;
-
+  align-self: center;
   margin: 8px 16px 0;
   font-weight: bold;
+  font-size: 2.2em;
+}
+
+.user > span {
+  margin-left: 8px;
 }
 
 .github-btn {
@@ -206,4 +246,19 @@ header {
   align-items: center;
 
   font-weight: bold;
+}
+
+.login-btn {
+  background-color: #315481;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #253f60;
 }
