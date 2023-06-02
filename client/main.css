@@ -69,7 +69,8 @@ button:focus {
   overflow: auto;
   background: white;
   border: 1px solid #e1e5f0;
-  min-width: 600px;
+  max-width: 600px;
+  min-width: 350px;
   margin: 0 auto;
   border-radius: 5px;
   box-shadow: 0 3px 3px rgba(34, 25, 25, 0.4);
