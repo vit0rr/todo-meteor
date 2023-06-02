@@ -65,7 +65,7 @@ export const App = () => {
 
       <div className="main">
         {user ? (
-          <Fragment user={user}>
+          <Fragment >
             <div className="user">
               Take your tasks,{" "}
               <span onClick={logout}>
