@@ -1,17 +1,31 @@
-import { Meteor } from "meteor/meteor";
-import React, { useState } from "react";
+import { Meteor } from 'meteor/meteor';
+import React, { useState } from 'react';
 
 export const TaskForm = () => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!text) return;
 
-    Meteor.call("tasks.insert", text);
+    Meteor.call('tasks.insert', text);
 
-    setText("");
+    setText('');
+    setIsDisabled(true);
+  };
+
+  const handleTextChange = (e) => {
+    const text = e.target.value;
+
+    setText(text);
+
+    if (text.trim() === '' || !text) {
+      setIsDisabled(true);
+    } else {
+      setIsDisabled(false);
+    }
   };
 
   return (
@@ -20,10 +34,14 @@ export const TaskForm = () => {
         type="text"
         placeholder="Type to add new tasks"
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e) => {
+          handleTextChange(e);
+        }}
       />
 
-      <button type="submit">Add Task</button>
+      <button type="submit" disabled={isDisabled}>
+        Add Task
+      </button>
     </form>
   );
 };

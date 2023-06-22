@@ -1,11 +1,11 @@
-import React from "react";
-import { Meteor } from "meteor/meteor";
+import React from 'react';
+import { Meteor } from 'meteor/meteor';
 
 export const LoginWithGithub = () => {
   const handleGithubLogin = () => {
     Meteor.loginWithGithub({
-      requestPermissions: ["user"],
-      loginStyle: "popup",
+      requestPermissions: ['user'],
+      loginStyle: 'popup',
     });
   };
 

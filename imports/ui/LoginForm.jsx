@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Meteor } from "meteor/meteor";
-import { LoginWithGithub } from "./LoginWithGithub";
+import React, { useState } from 'react';
+import { Meteor } from 'meteor/meteor';
+import { LoginWithGithub } from './LoginWithGithub';
 
 export const LoginForm = () => {
-  const [username, setUsername] = useState("meteorite");
-  const [password, setPassword] = useState("password");
+  const [username, setUsername] = useState('meteorite');
+  const [password, setPassword] = useState('password');
 
   const submit = (e) => {
     e.preventDefault();
@@ -42,7 +42,9 @@ export const LoginForm = () => {
       </div>
 
       <div>
-        <button type="submit" className="login-btn">Log In</button>
+        <button type="submit" className="login-btn">
+          Log In
+        </button>
       </div>
     </form>
   );

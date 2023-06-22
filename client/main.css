@@ -142,6 +142,12 @@ header {
   background-color: #253f60;
 }
 
+/* add a style for disabled button */
+.task-form > button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .tasks {
   list-style-type: none;
   padding: 0;

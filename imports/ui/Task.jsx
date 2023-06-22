@@ -1,19 +1,10 @@
-import React from "react";
+import React from 'react';
 
 export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
   return (
     <li>
-      <input
-        type="checkbox"
-        checked={!!task.isChecked}
-        onClick={() => onCheckboxClick(task)}
-        readOnly
-      />
-      <span
-        style={{ textDecoration: task.isChecked ? "line-through" : "none" }}
-      >
-        {task.text}
-      </span>
+      <input type="checkbox" checked={!!task.isChecked} onClick={() => onCheckboxClick(task)} readOnly />
+      <span style={{ textDecoration: task.isChecked ? 'line-through' : 'none' }}>{task.text}</span>
       <button onClick={() => onDeleteClick(task)}>&times;</button>
     </li>
   );
